@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Registro</title>
+
+    <style>
+        .error { color: blue; display: none; }
+        #confirmarContrasena { display: none; }
+    </style>
+</head>
+<body>
+    <h1>Registro</h1>
+    <script src="scrip.js"></script>
+    <form id="formularioRegistro" onsubmit="return validarContrasena()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre"><br><br>
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos"><br><br>
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento"><br><br>
+        <label for="correo">Correo Generado:</label>
+        <input type="text" id="correo" name="correo" readonly><br><br>
+        <input type="button" value="Generar Correo" onclick="generarCorreo()"><br><br>
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required><br><br>
+        <span class="error" id="contrasenaError">Contraseña no válida. Debe tener al menos 8 caracteres, una mayúscula, un número y un carácter especial.</span><br><br>
+        <div id="confirmarContrasena">
+            <p>La contraseña es válida. ¿Deseas confirmar?</p>
+            <input type="button" value="Confirmar Contraseña" onclick="confirmarContrasena()">
+            <input type="button" value="Cambiar Contraseña" onclick="cambiarContrasena()">
+        </div>
+        <input type="submit" value="Registrar" style="display:none;">
+    </form>
+</body>
+</html>
